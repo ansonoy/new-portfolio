@@ -1,37 +1,57 @@
-import { MagneticEffect } from "./magneticEffect"
-import { StaggeredText } from "./staggeredText"
+"use client"
+
+import { useEffect } from "react"
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  animate
+} from "framer-motion"
+import { Stars } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
 
 export const IntroReveal = () => {
   const nameArray = ["Anson", "Ou", "Yang"]
   const companyArray = ["s01ve", "cyber", "solutions"]
+  const colorArray = ["#13FFAA", "#1367C6", "#CE84CF", "#DD335C"]
+  const color = useMotionValue(colorArray[0])
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 55%, ${color})`
+
+  useEffect(() => {
+    animate(color, colorArray, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror"
+    })
+  }, [])
   return (
-    <section className="flex items-center justify-center flex-col h-screen w-full bg-[#f7f7f7] text-center space-y-4 font-[500]">
-      <div className="flex space-x-8">
-        {nameArray.map((text, i) => (
-          <StaggeredText text={text} key={i} />
-        ))}
+    <motion.section
+      style={{
+        backgroundImage
+      }}
+      className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200 "
+    >
+      <div className="relative z-10 text-center">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium !leading-tight">
+          Anson Ou Yang <br /> Full Stack Developer <br />
+          Currently @ s01ve
+          <br />
+          Based in Calgary
+        </h1>
       </div>
-      <div className="text-4xl text-black uppercase sm:text-6xl md:text-7xl lg:text-8xl">
-        <p>
-          Full Stack Developer <br />
-        </p>
-
-        <p>Currently @ </p>
-        <a
-          className="flex space-x-8 my-3"
-          href="https://s01ve.io"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {companyArray.map((text, i) => (
-            <StaggeredText text={text} key={i} />
-          ))}
-        </a>
-
-        <p>BASED IN CALGARY</p>
+      <div className="absolute inset-0 z-0">
+        <Canvas>
+          <Stars
+            radius={100}
+            depth={50}
+            count={5000}
+            factor={4}
+            saturation={0}
+            fade
+          />
+        </Canvas>
       </div>
-
-      <div className="flex space-x-8"></div>
-    </section>
+    </motion.section>
   )
 }

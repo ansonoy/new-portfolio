@@ -12,7 +12,7 @@ export const StaggeredText = ({ text }: StaggeredTextProps) => {
 
   return (
     <motion.div
-      className="relative block overflow-hidden whitespace-nowrap text-4xl text-black uppercase sm:text-6xl md:text-7xl lg:text-8xl"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl sm:text-6xl md:text-6xl lg:text-7xl"
       initial="initial"
       whileHover="hovered"
       style={{ lineHeight: 0.75 }}
