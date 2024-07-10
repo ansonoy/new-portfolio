@@ -43,7 +43,7 @@ export const IntroReveal = () => {
       <div className="absolute inset-0 z-0">
         <Canvas>
           <Stars
-            radius={100}
+            radius={200}
             depth={50}
             count={5000}
             factor={4}
