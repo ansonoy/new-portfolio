@@ -20,7 +20,7 @@ export const IntroReveal = () => {
   useEffect(() => {
     animate(color, colorArray, {
       ease: "easeInOut",
-      duration: 10,
+      duration: 20,
       repeat: Infinity,
       repeatType: "mirror"
     })
@@ -37,7 +37,7 @@ export const IntroReveal = () => {
         <h1 className="text-4xl sm:text-6xl lg:text-7xl !leading-tight">
           Anson Ou Yang <br /> Full Stack Developer
         </h1>
-        <div className="flex flex-row space-x-10 mt-10">
+        <div className="flex flex-row space-x-2 mt-6">
           <MagneticEffect>
             <a
               href="https://github.com/ansonoy"
