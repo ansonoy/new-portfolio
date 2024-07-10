@@ -32,6 +32,7 @@ export const MagneticEffect = ({ children }: MagneticEffectProps) => {
       onMouseLeave={mouseLeave}
       animate={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 20, mass: 0.1 }}
+      className="w-fit h-fit"
     >
       {children}
     </motion.div>
