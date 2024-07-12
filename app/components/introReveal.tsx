@@ -46,7 +46,7 @@ export const IntroReveal = () => {
         <h1
           className={`text-5xl sm:text-6xl lg:text-7xl !leading-tight ${Inknut.className} mb-8`}
         >
-          Hi! I'm Anson!
+          Hi, I'm Anson!
         </h1>
         <p className={`${Space.className} text-2xl mb-8 w-2/3`}>
           I am a Full Stack Developer currently @{" "}
@@ -55,7 +55,7 @@ export const IntroReveal = () => {
               s01ve Cyber Solutions,
             </a>
           </span>{" "}
-          Currently based in Calgary.
+          based in Calgary.
         </p>
         <div className="flex flex-row space-x-12 mt-6">
           <MagneticEffect>
