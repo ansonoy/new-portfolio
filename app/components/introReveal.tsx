@@ -48,9 +48,9 @@ export const IntroReveal = () => {
         >
           Hi! I'm Anson!
         </h1>
-        <p className={`${Space.className} text-2xl mb-8 w-5/6 md:w-2/3`}>
+        <p className={`${Space.className} text-2xl mb-8 w-2/3`}>
           I am a Full Stack Developer currently @{" "}
-          <span>
+          <span className={`hover:text-gray-300`}>
             <a href="https://www.s01ve.io" target="_blank">
               s01ve Cyber Solutions,
             </a>
